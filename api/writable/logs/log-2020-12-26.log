@@ -1,0 +1,15 @@
+CRITICAL - 2020-12-26 04:02:52 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '../../vendor/fzaninotto/faker/src/autoload.php' (include_path='.:/Applications/MAMP/bin/php/php7.4.9/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-12-26 04:03:12 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '../../vendor/fzaninotto/faker/src/autoload.php' (include_path='.:/Applications/MAMP/bin/php/php7.4.9/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-12-26 04:03:13 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '../../vendor/fzaninotto/faker/src/autoload.php' (include_path='.:/Applications/MAMP/bin/php/php7.4.9/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-12-26 04:03:19 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '../../vendor/fzaninotto/faker/src/autoload.php' (include_path='.:/Applications/MAMP/bin/php/php7.4.9/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-12-26 04:03:20 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '../../vendor/fzaninotto/faker/src/autoload.php' (include_path='.:/Applications/MAMP/bin/php/php7.4.9/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

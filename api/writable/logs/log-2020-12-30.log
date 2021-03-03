@@ -1,0 +1,14 @@
+CRITICAL - 2020-12-30 08:49:38 --> Table 'api-bde.events' doesn't exist
+#0 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(462): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/etienne/Web/Projets/api-bde/app/Models/EventsModel.php(15): CodeIgniter\Model->findAll()
+#6 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(13): App\Models\EventsModel->getEvents()
+#7 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->index()
+#8 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#9 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#12 {main}

@@ -1,0 +1,61 @@
+CRITICAL - 2021-01-03 08:39:58 --> Unable to connect to the database.
+#0 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(462): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/etienne/Web/Projets/api-bde/app/Models/EventsModel.php(15): CodeIgniter\Model->findAll()
+#4 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(13): App\Models\EventsModel->getEvents()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->index()
+#6 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#7 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#10 {main}
+CRITICAL - 2021-01-03 08:53:47 --> Array to string conversion
+#0 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/etienne/...', 16, Array)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->index()
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#6 {main}
+CRITICAL - 2021-01-03 08:54:42 --> Array to string conversion
+#0 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/etienne/...', 16, Array)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->index()
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#6 {main}
+CRITICAL - 2021-01-03 09:58:32 --> Column 'title' cannot be null
+#0 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('INSERT INTO `ev...')
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ev...')
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ev...')
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ev...', Array, false)
+#4 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(574): CodeIgniter\Model->insert(Array, false)
+#6 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(31): CodeIgniter\Model->save(Array)
+#7 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->create()
+#8 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#9 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#12 {main}
+CRITICAL - 2021-01-03 10:12:53 --> Argument 2 passed to CodeIgniter\Validation\Rules::is_unique() must be of the type string, null given, called in /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Validation/Validation.php on line 325
+#0 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Validation/Validation.php(325): CodeIgniter\Validation\Rules->is_unique('Le vrai test', NULL)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Validation/Validation.php(189): CodeIgniter\Validation\Validation->processRules('title', 'title', 'Le vrai test', Array, Array)
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Controller.php(219): CodeIgniter\Validation\Validation->run()
+#3 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(36): CodeIgniter\Controller->validate(Array)
+#4 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->create()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#6 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#9 {main}
+CRITICAL - 2021-01-03 10:16:56 --> Array to string conversion
+#0 /Users/etienne/Web/Projets/api-bde/app/Controllers/Events.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/etienne/...', 52, Array)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Events->create()
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Events))
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#6 {main}

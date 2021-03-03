@@ -1,0 +1,29 @@
+CRITICAL - 2021-02-28 10:27:39 --> Call to a member function getJSON() on array
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#5 {main}
+CRITICAL - 2021-02-28 10:32:23 --> Argument 2 passed to CodeIgniter\Controller::validate() must be of the type array, string given, called in /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php on line 38
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(38): CodeIgniter\Controller->validate(Array, 'etienne.januel@...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-02-28 11:40:24 --> Call to a member function withRequest() on null
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#5 {main}
+CRITICAL - 2021-02-28 11:42:43 --> Call to undefined method stdClass::validate()
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#5 {main}

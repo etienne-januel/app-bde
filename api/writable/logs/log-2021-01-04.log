@@ -1,0 +1,17 @@
+CRITICAL - 2021-01-04 08:57:28 --> str_split(): The length of each segment must be greater than zero
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'str_split(): Th...', '/Users/etienne/...', 21, Array)
+#1 /Users/etienne/Web/Projets/api-bde/app/Controllers/Auth.php(21): str_split('etienne.januel@...', -16)
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#7 {main}
+CRITICAL - 2021-01-04 09:08:40 --> Array to string conversion
+#0 /Users/etienne/Web/Projets/api-bde/app/Controllers/Auth.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/etienne/...', 31, Array)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#6 {main}

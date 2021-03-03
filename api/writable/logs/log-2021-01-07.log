@@ -1,0 +1,22 @@
+CRITICAL - 2021-01-07 08:42:17 --> Invalid JSON text: "Invalid value." at position 0 in value for column 'tokens.content'.
+#0 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('INSERT INTO `to...')
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `to...')
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `to...')
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO `to...', Array, false)
+#4 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Model.php(574): CodeIgniter\Model->insert(Array, false)
+#6 /Users/etienne/Web/Projets/api-bde/app/Controllers/Auth.php(29): CodeIgniter\Model->save(Array)
+#7 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#8 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#12 {main}
+CRITICAL - 2021-01-07 09:02:30 --> Array to string conversion
+#0 /Users/etienne/Web/Projets/api-bde/app/Controllers/Auth.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/etienne/...', 61, Array)
+#1 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register('a19e13d021b9c00...')
+#2 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/etienne/Web/Projets/api-bde/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/etienne/Web/Projets/api-bde/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/etienne/...')
+#6 {main}

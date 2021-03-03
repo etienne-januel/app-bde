@@ -1,0 +1,185 @@
+CRITICAL - 2021-03-01 08:23:59 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:24:06 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:38 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:45 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:47 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:48 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:48 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:49 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:25:50 --> syntax error, unexpected 'echo' (T_ECHO), expecting ';'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#9 {main}
+CRITICAL - 2021-03-01 08:34:19 --> Cannot use object of type App\Models\TokenModel as array
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#5 {main}
+CRITICAL - 2021-03-01 08:34:21 --> Cannot use object of type App\Models\TokenModel as array
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#5 {main}
+CRITICAL - 2021-03-01 10:06:41 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 130, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->registerToken()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:40:58 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 48, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:40:59 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 48, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:40:59 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 48, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:41:01 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 48, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:41:02 --> Illegal string offset 'mail'
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/M...', 48, Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:44:26 --> Call to undefined method App\Models\TokenModel::findOne
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(45): CodeIgniter\Model->__call('findOne', Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:44:27 --> Call to undefined method App\Models\TokenModel::findOne
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(45): CodeIgniter\Model->__call('findOne', Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
+CRITICAL - 2021-03-01 10:44:28 --> Call to undefined method App\Models\TokenModel::findOne
+#0 /Applications/MAMP/htdocs/Workspace/app-bde/api/app/Controllers/Auth.php(45): CodeIgniter\Model->__call('findOne', Array)
+#1 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Auth->register()
+#2 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/Workspace/app-bde/api/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/Workspace/app-bde/api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Applications/M...')
+#6 {main}
