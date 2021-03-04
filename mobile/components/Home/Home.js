@@ -23,6 +23,7 @@ const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
   <Drawer.Navigator initialRouteName="HomeFeed">
     <Drawer.Screen name="HomeFeed" component={HomeFeed} />
+    <Drawer.Screen name="Events" component={EventsScreen} />
   </Drawer.Navigator>
 );
 
