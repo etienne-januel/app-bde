@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   SafeAreaView,
@@ -7,19 +7,18 @@ import {
   StyleSheet,
   Dimensions,
   Button,
-  Keyboard,
+  Platform,
 } from 'react-native';
 import axios from 'axios';
 import { Loader } from '../assets/Loader';
 import { ArrowLeftButton } from '../assets/Navigation';
-import Warning from '../assets/images/warning.svg';
 
 export const RegisterStep2Screen = (props) => {
   return <RegisterStep2 {...props} />;
 };
 
 const RegisterStep2 = (props) => {
-  const [digits, setDigits] = useState([]);
+  const [digits, setDigits] = useState(['5', '9', '2', '1', '1', '4']);
   const [userInfo, setUserInfo] = useState({
     mail: props.userInfo.mail,
     verificationCode: digits.join(''),
@@ -29,83 +28,87 @@ const RegisterStep2 = (props) => {
 
   const textInputRefs = [];
 
+  const isNumeric = (str) => {
+    if (typeof str == 'number') return true;
+    if (typeof str != 'string') return false;
+    return !isNaN(str) && !isNaN(parseFloat(str));
+  };
+  /*
+Prevent default sur le textinput sinon tt marche
+*/
   handleForm = (index, value) => {
-    console.log(digits[index], ' => ', value);
-    if(digits[index] == '' || !digits[index])
-    {
-      console.log('soit vide soit null');
-    } else {
-      console.log('ya un char');
+    let digitsArray = digits;
+    let trueIndex = index;
+    for (let i = 5; i >= 0; i--) {
+      if (!isNumeric(digits[i])) {
+        trueIndex = i;
+      }
     }
 
-    let digitsArray = digits;
-    digitsArray[index] = value;
+    textInputRefs[trueIndex].focus();
+
+    if (!isNumeric(digits[trueIndex])) {
+      if (
+        value.key == 'Backspace' &&
+        textInputRefs[trueIndex - 1] != undefined
+      ) {
+        textInputRefs[trueIndex - 1].focus();
+      }
+      if (isNumeric(value.key)) {
+        digitsArray[trueIndex] = value.key;
+      } else {
+      }
+    } else {
+      if (value.key == 'Backspace') {
+        digitsArray[trueIndex] = '';
+      } else if (isNumeric(value.key)) {
+        digitsArray[trueIndex] = value.key;
+      }
+    }
     setDigits(digitsArray);
-
-    // if (!digits[index]) {
-    //   if (Number.isInteger(parseInt(value, 10))) {
-    //     let verificationCodeArray = digits;
-    //     verificationCodeArray[index] = value;
-    //     setDigits(verificationCodeArray);
-
-    //     if (parseInt(digits[index], 10)) {
-    //       if (textInputRefs[index + 1]) {
-    //         textInputRefs[index + 1].focus();
-    //       } else {
-    //         let trueDigit = 7;
-    //         digits.forEach((digit) => {
-    //           if (Number.isInteger(digit)) {
-    //             trueDigit--;
-    //           }
-    //         });
-    //         if (trueDigit) {
-    //           Keyboard.dismiss();
-    //           setUserInfo({ ...userInfo, verificationCode: digits.join('') });
-    //           // submitForm();
-    //         }
-    //       }
-    //     }
-    //   }
-    // } else {
-    //   let verificationCodeArray = digits;
-    //   verificationCodeArray[index] = value;
-    //   setDigits(verificationCodeArray);
-    // }
+    if (isNumeric(digits[trueIndex]) && textInputRefs[trueIndex + 1]) {
+      textInputRefs[trueIndex + 1].focus();
+    }
+    if (trueIndex == 5) {
+      let trueDigits = 0;
+      digits.forEach((digit) => isNumeric(digit) && trueDigits++);
+      if (trueDigits) {
+        let userInfoMock = userInfo;
+        userInfoMock.verificationCode = digits.join('');
+        setUserInfo(userInfoMock);
+        submitForm();
+      }
+    }
   };
 
   const submitForm = () => {
-    const errorsArray = new Array();
+    let errorsMock = [];
+    axios
+      .post(
+        'http://localhost:8080/register/2',
+        { userInfo },
+        { headers: { 'Content-Type': 'application/json' } }
+      )
+      .then((response) => {
+        setLoading(false);
+        console.log(response.data);
+        if (response.data.http_code == 200) {
+          props.fetchUserInfo('flat', userInfo);
+          props.navigation.push('RegisterStep3Screen');
+        } else if (
+          response.data.http_code == 400 ||
+          response.data.http_code == 401
+        ) {
+          errorsMock.push(response.data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+        errorsMock.push(error);
+      });
 
-    if (digits == '') {
-      errors.push('verificationCodeArray is empty');
-    }
-
-    if (!errorsArray.length > 0) {
-      setLoading(true);
-      axios
-        .post('http://localhost:8080/register/2', userInfo, {
-          headers: { 'Content-Type': 'application/json' },
-        })
-        .then((response) => {
-          setLoading(false);
-          if (response.data.http_code == 200) {
-            props.navigation.push('RegisterStep3Screen');
-          } else if (
-            response.data.http_code == 400 ||
-            response.data.http_code == 401
-          ) {
-            errorsArray.push(response.data.message);
-            setErrors(errorsArray);
-          }
-        })
-        .catch((error) => {
-          setLoading(false);
-          errorsArray.push(error);
-          setErrors(errorsArray);
-        });
-    } else {
-      setErrors(errorsArray);
-    }
+    setErrors(errorsMock);
   };
 
   return (
@@ -138,8 +141,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[0]}
-                onChangeText={(text) => {
-                  handleForm(0, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(0, nativeEvent);
                 }}
                 blurOnSubmit={false}
               />
@@ -153,8 +156,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[1]}
-                onChangeText={(text) => {
-                  handleForm(1, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(1, nativeEvent);
                 }}
                 blurOnSubmit={false}
               />
@@ -168,8 +171,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[2]}
-                onChangeText={(text) => {
-                  handleForm(2, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(2, nativeEvent);
                 }}
                 blurOnSubmit={false}
               />
@@ -183,8 +186,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[3]}
-                onChangeText={(text) => {
-                  handleForm(3, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(3, nativeEvent);
                 }}
                 blurOnSubmit={false}
               />
@@ -198,8 +201,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[4]}
-                onChangeText={(text) => {
-                  handleForm(4, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(4, nativeEvent);
                 }}
                 blurOnSubmit={false}
               />
@@ -213,8 +216,8 @@ const RegisterStep2 = (props) => {
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
                 value={digits[5]}
-                onChangeText={(text) => {
-                  handleForm(5, text);
+                onKeyPress={({ nativeEvent }) => {
+                  handleForm(5, nativeEvent);
                 }}
               />
             </View>
@@ -222,14 +225,28 @@ const RegisterStep2 = (props) => {
         </View>
       </SafeAreaView>
       <Button
-        style={{
-          padding: 5,
-          marginTop: 50,
+        title="dev Submit"
+        onPress={() => {
+          submitForm();
         }}
-        title="dev"
+      />
+      <Button
+        title="dev Digits"
         onPress={() => {
           console.log(digits);
-          // submitForm();
+        }}
+      />
+      <Button
+        title="dev userInfo"
+        onPress={() => {
+          // console.log(textInputRefs[0].viewConfig);
+          console.log(userInfo);
+        }}
+      />
+      <Button
+        title="dev errors"
+        onPress={() => {
+          console.log(errors);
         }}
       />
     </View>
@@ -243,6 +260,7 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#F0F0F0',
+    marginTop: Platform.OS === 'android' ? 20 : 0,
   },
   titleContainer: {
     marginTop: 20,
@@ -299,7 +317,7 @@ const style = StyleSheet.create({
     borderRadius: 12,
     borderColor: '#707070',
     color: '#707070',
-    borderWidth: 1,
+    borderWidth: 1.5,
     width: 42,
     height: 52,
     textAlign: 'center',

@@ -8,10 +8,46 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Platform,
+  Button
 } from 'react-native';
 import axios from 'axios';
 import { Loader } from '../assets/Loader';
 import Warning from '../assets/images/warning.svg';
+import { AuthenticationFormErrors } from '../assets/Errors';
+// import DocumentPicker from 'react-native-document-picker';
+
+// const pickFile = async () => {
+//   try {
+//     const res = await DocumentPicker.pick({
+//       type: [DocumentPicker.types.allFiles],
+//       //There can me more options as well
+//       // DocumentPicker.types.allFiles
+//       // DocumentPicker.types.images
+//       // DocumentPicker.types.plainText
+//       // DocumentPicker.types.audio
+//       // DocumentPicker.types.pdf
+//     });
+//     //Printing the log realted to the file
+//     console.log('res : ' + JSON.stringify(res));
+//     console.log('URI : ' + res.uri);
+//     console.log('Type : ' + res.type);
+//     console.log('File Name : ' + res.name);
+//     console.log('File Size : ' + res.size);
+//     //Setting the state to show single file attributes
+//     // this.setState({ singleFile: res });
+//   } catch (err) {
+//     //Handling any exception (If any)
+//     if (DocumentPicker.isCancel(err)) {
+//       //If user canceled the document selection
+//       alert('Canceled from single doc picker');
+//     } else {
+//       //For Unknown Error
+//       alert('Unknown Error: ' + JSON.stringify(err));
+//       throw err;
+//     }
+//   }
+// }
 
 export const LoginScreen = (props) => {
   return <Login {...props} />;
@@ -30,28 +66,19 @@ const Login = (props) => {
   };
 
   const submitForm = () => {
-    const errorsArray = new Array();
+    const errorsMock = new Array();
 
-    if (userInfo.username == '') {
-      errorsArray.push('username is empty');
-    } else {
-      if (!userInfo.username.includes('.')) {
-        errorsArray.push('username format is invalid');
-      }
-    }
+    userInfo.username == '' && errorsMock.push('Le champ Nom d\'utilisateur est vide');
+    userInfo.password == '' && errorsMock.push('Le champ mot de passe est vide');
 
-    if (userInfo.password == '') {
-      errorsArray.push('password is empty');
-    }
-
-    if (!errorsArray.length > 0) {
+    if (!errorsMock.length > 0) {
       setLoading(true);
       axios
         .post('http://localhost:8080/login', userInfo, {
+        // .post('https://api.fztn.gg/login', userInfo, {
           headers: { 'Content-Type': 'application/json' },
         })
         .then((response) => {
-          console.log(response);
           setLoading(false);
           if (response.data.http_code == 200) {
             props.fetchUserInfo('jwt', response.data.jwt);
@@ -59,18 +86,17 @@ const Login = (props) => {
             response.data.http_code == 401 ||
             response.data.http_code == 400
           ) {
-            errorsArray.push(response.data.message);
-            setErrors(errorsArray);
+            errorsMock.push(response.data.message);
+            setErrors(errorsMock);
           }
         })
         .catch((error) => {
-          console.log(error);
           setLoading(false);
-          errorsArray.push(error);
-          setErrors(errorsArray);
+          errorsMock.push(error);
+          setErrors(errorsMock);
         });
     } else {
-      setErrors(errorsArray);
+      setErrors(errorsMock);
     }
   };
 
@@ -97,9 +123,9 @@ const Login = (props) => {
                 handleForm('username', text);
               }}
             />
-            {errors.length > 0 && (
+            {/* {errors.length > 0 && (
               <Warning style={style.inputWarning} width={24} height={24} />
-            )}
+            )} */}
           </View>
         </View>
 
@@ -116,16 +142,16 @@ const Login = (props) => {
                 handleForm('password', text);
               }}
             />
-            {errors.length > 0 && (
+            {/* {errors.length > 0 && (
               <Warning style={style.inputWarning} width={24} height={24} />
-            )}
+            )} */}
           </View>
         </View>
 
         <Pressable
           style={{ marginTop: 20 }}
           onPress={() => {
-            props.navigation.push('ResetPasswordScreen');
+            props.navigation.navigate('ResetPasswordScreen');
           }}
         >
           <Text style={style.formLink}>Mot de passe oublié ?</Text>
@@ -134,11 +160,13 @@ const Login = (props) => {
         <Pressable
           style={{ marginTop: 20 }}
           onPress={() => {
-            props.navigation.push('RegisterScreen');
+            props.navigation.navigate('RegisterScreen');
           }}
         >
           <Text style={style.formLink}>Créer un compte</Text>
         </Pressable>
+
+        {errors.length > 0 && <AuthenticationFormErrors errors={errors} />}
 
         <TouchableOpacity
           style={style.formButton}
@@ -149,6 +177,7 @@ const Login = (props) => {
           <Text style={style.formButtonText}>Connexion</Text>
         </TouchableOpacity>
       </View>
+      {/* <Button title={'dev pickFile'} onPress={() => pickFile()} /> */}
     </SafeAreaView>
   );
 };
@@ -160,6 +189,7 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#F0F0F0',
+    marginTop: Platform.OS === 'android' ? 20 : 0
   },
   titleContainer: {
     width: Dimensions.get('window').width - 40,
@@ -192,7 +222,7 @@ const style = StyleSheet.create({
     marginBottom: 4,
   },
   formInput: {
-    borderRadius: 21,
+    borderRadius: 50,
     borderColor: '#664BFB',
     borderWidth: 2,
     color: '#707070',

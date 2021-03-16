@@ -7,12 +7,15 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Platform,
+  Button,
 } from 'react-native';
 import axios from 'axios';
 import { Loader } from '../assets/Loader';
 import { ArrowLeftButton } from '../assets/Navigation';
-import Warning from '../assets/images/warning.svg';
 import Lock from '../assets/images/lock.svg';
+import { Visibility } from '../assets/Buttons';
+import { AuthenticationFormErrors } from '../assets/Errors';
 
 export const RegisterStep3Screen = (props) => {
   return <RegisterStep3 {...props} />;
@@ -22,40 +25,48 @@ const RegisterStep3 = (props) => {
   const [userInfo, setUserInfo] = useState({
     mail: props.userInfo.mail,
     username: props.userInfo.mail.split('@')[0],
+    verificationCode: props.userInfo.verificationCode,
+    password: '',
+    passwordConfirm: '',
   });
   const [errors, setErrors] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [passwordVisibility, setPasswordVisibility] = useState(true);
 
   handleForm = (field, value) => {
     setUserInfo({ ...userInfo, [field]: value });
   };
 
   const submitForm = () => {
-    let errorsArray = [];
+    let errorsMock = [];
 
-    if (errorsArray.length > 0) {
-      setErrors(errorsArray);
-    } else {
+    !(userInfo.password == userInfo.passwordConfirm) &&
+      errorsMock.push('Les mots de passe doivent correspondre');
+
+    if (!errorsMock.length > 0) {
       setLoading(true);
       axios
-        .post('http://localhost:8080/register/password', userInfo, {
-          headers: { 'Content-Type': 'application/json' },
-        })
+        .post(
+          'http://localhost:8080/register/3',
+          { userInfo },
+          { headers: { 'Content-Type': 'application/json' } }
+        )
         .then((response) => {
           setLoading(false);
-          console.log(response);
-          // if (response.data.http_code == 200) {
-          //   props.fetchUserInfo('flat', userInfo);
-          //   props.navigation.push('RegisterStep2Screen');
-          // } else {
-          //   console.log(response.data.message);
-          // }
+          console.log(response.data);
+          if (response.data.http_code == 200) {
+            props.fetchUserInfo('flat', userInfo);
+            props.navigation.push('RegisterStep4Screen');
+          } else {
+            errorsMock.push(response.data.message);
+          }
         })
         .catch((error) => {
           setLoading(false);
-          console.log(error);
+          errorsMock.push(error);
         });
     }
+    setErrors(errorsMock);
   };
 
   return (
@@ -77,7 +88,7 @@ const RegisterStep3 = (props) => {
                 value={userInfo.mail}
                 editable={false}
               />
-              <Lock style={style.inputWarning} width={24} height={24} />
+              <Lock style={style.inputDecoration} width={24} height={24} />
             </View>
           </View>
           <View style={{ marginTop: 10 }}>
@@ -90,7 +101,7 @@ const RegisterStep3 = (props) => {
                 value={userInfo.username}
                 editable={false}
               />
-              <Lock style={style.inputWarning} width={24} height={24} />
+              <Lock style={style.inputDecoration} width={24} height={24} />
             </View>
           </View>
           <View style={{ marginTop: 10 }}>
@@ -100,11 +111,16 @@ const RegisterStep3 = (props) => {
                 style={style.formInput}
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
-                secureTextEntry={true}
+                secureTextEntry={passwordVisibility}
                 value={userInfo.password}
                 onChangeText={(text) => {
                   handleForm('password', text);
                 }}
+              />
+              <Visibility
+                style={style.inputDecoration}
+                setVisibility={setPasswordVisibility}
+                visibility={passwordVisibility}
               />
             </View>
           </View>
@@ -115,14 +131,21 @@ const RegisterStep3 = (props) => {
                 style={style.formInput}
                 underlineColorAndroid="transparent"
                 autoCapitalize="none"
-                secureTextEntry={true}
+                secureTextEntry={passwordVisibility}
                 value={userInfo.passwordConfirm}
                 onChangeText={(text) => {
                   handleForm('passwordConfirm', text);
                 }}
               />
+              <Visibility
+                style={style.inputDecoration}
+                setVisibility={setPasswordVisibility}
+                visibility={passwordVisibility}
+              />
             </View>
           </View>
+
+          {errors.length > 0 && <AuthenticationFormErrors errors={errors} />}
 
           <TouchableOpacity
             style={style.formButton}
@@ -130,10 +153,16 @@ const RegisterStep3 = (props) => {
               submitForm();
             }}
           >
-            <Text style={style.formButtonText}>Vérifier l'addresse mail</Text>
+            <Text style={style.formButtonText}>Valider ces informations</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
+      <Button
+        title="dev errors"
+        onPress={() => {
+          setErrors([]);
+        }}
+      />
     </View>
   );
 };
@@ -145,6 +174,7 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#F0F0F0',
+    marginTop: Platform.OS === 'android' ? 20 : 0,
   },
   titleContainer: {
     marginTop: 20,
@@ -184,14 +214,14 @@ const style = StyleSheet.create({
     marginBottom: 4,
   },
   formInput: {
-    borderRadius: 21,
+    borderRadius: 50,
     borderColor: '#664BFB',
     borderWidth: 2,
     color: '#707070',
     padding: 12,
     fontSize: 16,
   },
-  inputWarning: {
+  inputDecoration: {
     position: 'absolute',
     top: 10,
     right: 20,

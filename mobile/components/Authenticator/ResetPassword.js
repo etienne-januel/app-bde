@@ -4,10 +4,10 @@ import {
   SafeAreaView,
   Text,
   TextInput,
-  Pressable,
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 
 import { Loader } from '../assets/Loader';
@@ -91,6 +91,7 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#F0F0F0',
+    marginTop: Platform.OS === 'android' ? 20 : 0
   },
   titleContainer: {
     marginTop: 20,
@@ -120,7 +121,7 @@ const style = StyleSheet.create({
     marginBottom: 4,
   },
   formInput: {
-    borderRadius: 21,
+    borderRadius: 50,
     borderColor: '#664BFB',
     borderWidth: 2,
     color: '#707070',

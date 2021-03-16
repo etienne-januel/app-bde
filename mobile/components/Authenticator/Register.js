@@ -7,12 +7,16 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Modal,
+  Platform,
   Button,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import axios from 'axios';
 import { Loader } from '../assets/Loader';
 import { ArrowLeftButton } from '../assets/Navigation';
 import Warning from '../assets/images/warning.svg';
+import { AuthenticationFormErrors } from '../assets/Errors';
 
 export const RegisterScreen = (props) => {
   return <Register {...props} />;
@@ -24,48 +28,64 @@ const Register = (props) => {
   });
   const [errors, setErrors] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const handleForm = (field, value) => {
     setUserInfo({ ...userInfo, [field]: value });
   };
 
-  const submitForm = () => {
-    let errorsArray = new Array();
+  const submitForm = (force = false) => {
+    let errorsMock = [];
 
-    if (userInfo.mail == '') {
-      errorsArray.push('mail is empty');
-    } else {
-      if (!userInfo.mail.includes('.') || !userInfo.mail.includes('@')) {
-        errorsArray.push('mail format is invalid');
-      }
-    }
+    (userInfo.mail == '' && errorsMock.push('Le champ mail est vide')) ||
+      ((!userInfo.mail.includes('.') || !userInfo.mail.includes('@')) &&
+        errorsMock.push('mail format is invalid'));
 
-    if (!errorsArray.length > 0) {
+    if (!errorsMock.length > 0) {
       setLoading(true);
       axios
-        .post('http://localhost:8080/register/1', userInfo, {
-          headers: { 'Content-Type': 'application/json' },
-        })
+        .post(
+          'http://localhost:8080/register/1',
+          { userInfo },
+          { headers: { 'Content-Type': 'application/json' } }
+        )
         .then((response) => {
           setLoading(false);
+          console.log(response.data);
           if (response.data.http_code == 200) {
-            props.fetchUserInfo('flat', userInfo);
-            props.navigation.push('RegisterStep2Screen');
+            if (response.data.status == 'exist') {
+              setModalVisible(true);
+            } else {
+              props.fetchUserInfo('flat', userInfo);
+              props.navigation.push('RegisterStep2Screen');
+            }
           } else if (
             response.data.http_code == 400 ||
             response.data.http_code == 401
           ) {
-            errorsArray.push(response.data.message);
-            setErrors(errorsArray);
+            for (const [key, value] of Object.entries(response.data.message)) {
+              errorsMock.push(value);
+            }
           }
         })
         .catch((error) => {
           setLoading(false);
-          errorsArray.push(error);
-          setErrors(errorsArray);
+          errorsMock.push(error);
         });
-    } else {
-      setErrors(errorsArray);
+    }
+    setErrors(errorsMock);
+  };
+
+  const submitModal = (action) => {
+    setModalVisible(!modalVisible);
+    switch (action) {
+      case 0:
+        props.fetchUserInfo('flat', userInfo);
+        props.navigation.push('RegisterStep2Screen');
+        break;
+      case 1:
+        submitForm(true);
+        break;
     }
   };
 
@@ -90,11 +110,10 @@ const Register = (props) => {
                   handleForm('mail', text);
                 }}
               />
-              {errors.length > 0 && (
-                <Warning style={style.inputWarning} width={24} height={24} />
-              )}
             </View>
           </View>
+
+          {errors.length > 0 && <AuthenticationFormErrors errors={errors} />}
 
           <TouchableOpacity
             style={style.formButton}
@@ -105,7 +124,48 @@ const Register = (props) => {
             <Text style={style.formButtonText}>Vérifier l'addresse mail</Text>
           </TouchableOpacity>
         </View>
+
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <TouchableWithoutFeedback
+            onPress={() => setModalVisible(!modalVisible)}
+          >
+            <View style={style.modalBackground}>
+              <TouchableWithoutFeedback>
+                <View style={style.modalContainer}>
+                  <Text style={style.modalTitle}>
+                    Adresse mail déjà enregistrée
+                  </Text>
+                  <TouchableOpacity
+                    style={style.modalButton}
+                    onPress={() => submitModal(0)}
+                  >
+                    <Text style={style.modalButtonText}>
+                      Saisir le code reçu
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={style.modalButton}
+                    onPress={() => submitModal(1)}
+                  >
+                    <Text style={style.modalButtonText}>
+                      Générer un nouveau code
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </TouchableWithoutFeedback>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
       </SafeAreaView>
+      <Button title={'dev submit'} onPress={() => submitModal(0)} />
+      <Button title={'dev errors'} onPress={() => console.log(errors)} />
     </View>
   );
 };
@@ -117,6 +177,7 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#F0F0F0',
+    marginTop: Platform.OS === 'android' ? 20 : 0,
   },
   titleContainer: {
     marginTop: 20,
@@ -156,7 +217,7 @@ const style = StyleSheet.create({
     marginBottom: 4,
   },
   formInput: {
-    borderRadius: 21,
+    borderRadius: 50,
     borderColor: '#664BFB',
     borderWidth: 2,
     color: '#707070',
@@ -199,6 +260,37 @@ const style = StyleSheet.create({
     borderRadius: 21,
   },
   formButtonText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  modalBackground: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#F0F0F0ae',
+  },
+  modalContainer: {
+    width: Dimensions.get('window').width - 40,
+    backgroundColor: 'white',
+    borderRadius: 21,
+    paddingHorizontal: 18,
+    paddingVertical: 20,
+  },
+  modalTitle: {
+    fontSize: 20,
+    color: '#707070',
+    alignSelf: 'center',
+  },
+  modalButton: {
+    marginTop: 20,
+    backgroundColor: '#FF6464',
+    padding: 12,
+    borderRadius: 21,
+  },
+  modalButtonText: {
     color: 'white',
     fontSize: 16,
     textAlign: 'center',

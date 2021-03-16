@@ -8,6 +8,7 @@ import { ResetPasswordScreen } from './ResetPassword';
 import { RegisterScreen } from './Register';
 import { RegisterStep2Screen } from './RegisterStep2';
 import { RegisterStep3Screen } from './RegisterStep3';
+import { RegisterStep4Screen } from './RegisterStep4';
 
 export default Authenticator = (props) => {
   return (
@@ -39,6 +40,10 @@ const AuthStackScreen = (props) => (
     <AuthStack.Screen
       name="RegisterStep3Screen"
       children={(oldprops) => <RegisterStep3Screen {...oldprops} {...props} />}
+    />
+    <AuthStack.Screen
+      name="RegisterStep4Screen"
+      children={(oldprops) => <RegisterStep4Screen {...oldprops} {...props} />}
     />
   </AuthStack.Navigator>
 );
